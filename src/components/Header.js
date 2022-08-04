@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
-const Header = () => {};
+const Header = ({ currentScore }) => {
+  return <div>{currentScore}</div>;
+};
 
 export default Header;

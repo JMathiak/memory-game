@@ -1,13 +1,17 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import GameArea from "./GameArea";
 import Header from "./Header";
 import Footer from "./Footer";
 const Main = () => {
-  <div>
-    <Header />
-    <GameArea />
-    <Footer />
-  </div>;
+  const [currentScore, setCurrentScore] = useState(0);
+
+  return (
+    <div>
+      <Header currentScore={currentScore} />
+      <GameArea setCurrentScore={setCurrentScore} currentScore={currentScore} />
+      <Footer />
+    </div>
+  );
 };
 
 export default Main;
