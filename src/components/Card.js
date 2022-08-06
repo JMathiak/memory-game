@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../styles/card.css";
+
 const Card = ({
   name,
   member,
@@ -8,20 +9,18 @@ const Card = ({
   setdcArr,
   currentScore,
   setCurrentScore,
+  originalArray,
+  shuffle,
+  memberPhoto,
 }) => {
   const handleClick = (e) => {
     e.preventDefault();
-    let shuffArr = dcArr;
-    for (let i = shuffArr.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      [shuffArr[i], shuffArr[j]] = [shuffArr[j], shuffArr[i]];
-    }
-    console.log(shuffArr);
-    setdcArr((curArr) => {
-      return [...shuffArr];
-    });
+    shuffle();
     if (member.clicked === false) {
       setCurrentScore(currentScore + 1);
+      if (currentScore + 1 === 7) {
+        alert("You win");
+      }
       let pos = dcArr
         .map(function (e) {
           return e.id;
@@ -32,13 +31,18 @@ const Card = ({
         name: name,
         clicked: true,
         id: memberId,
+        pic: memberPhoto,
       };
       setdcArr([...memberArrCopy]);
       console.log(pos);
+    } else if (member.clicked === true) {
+      setCurrentScore(0);
+      setdcArr(originalArray);
     }
   };
   return (
     <div onClick={handleClick} className="card">
+      <img width="100%" height="100%" src={memberPhoto} alt=""></img>
       {name}
     </div>
   );
