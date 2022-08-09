@@ -43,7 +43,7 @@ const Card = ({
   return (
     <div onClick={handleClick} className="card">
       <img width="100%" height="100%" src={memberPhoto} alt=""></img>
-      {name}
+      <div className="member-name">{name}</div>
     </div>
   );
 };

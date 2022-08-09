@@ -9,10 +9,6 @@ import yooPic from "../img/YooAMPC.jpg";
 import damiPic from "../img/DamiAMPC.jpg";
 import gahPic from "../img/GahAMPC.jpg";
 const GameArea = ({ setCurrentScore, currentScore }) => {
-  useEffect(() => {
-    shuffMethod();
-  }, []);
-
   const shuffMethod = () => {
     let shuffArr = dcArr;
     for (let i = shuffArr.length - 1; i > 0; i--) {
@@ -24,6 +20,11 @@ const GameArea = ({ setCurrentScore, currentScore }) => {
       return [...shuffArr];
     });
   };
+
+  useEffect(() => {
+    shuffMethod();
+  }, []);
+
   const origArray = [
     {
       name: "Jiu",
@@ -71,7 +72,7 @@ const GameArea = ({ setCurrentScore, currentScore }) => {
   const [dcArr, setdcArr] = useState(origArray);
   return (
     <div className="game-area">
-      {dcArr.map((member) => (
+      {dcArr.map((member, i) => (
         <Card
           dcArr={dcArr}
           member={member}
@@ -83,6 +84,7 @@ const GameArea = ({ setCurrentScore, currentScore }) => {
           setCurrentScore={setCurrentScore}
           originalArray={origArray}
           shuffle={shuffMethod}
+          key={i}
         />
       ))}
     </div>
