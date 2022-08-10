@@ -1,5 +1,5 @@
 .card{
-    border: .5px solid black;
+    border: .5px solid transparent;
     padding: 0px;
     width: 20%;
     position: relative;
