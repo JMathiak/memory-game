@@ -1,11 +1,25 @@
 .game-area{
     display: flex;
+    /* flex-flow: row-wrap; */
     justify-content: center;
-    flex-flow: row wrap;
+    align-items: center;
+    padding-left: 50px; 
+    padding-right: 50px; 
+    min-height: 100px;
+    height: 100%;
 }
 
+.game-container{
+    display: flex;
+    flex-flow: column nowrap;
+    height:75%;
+    overflow: hidden;
+   
+}
 /* .game-area{
     display:grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-left: 10px;
 } */

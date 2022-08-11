@@ -12,12 +12,17 @@ const Card = ({
   originalArray,
   shuffle,
   memberPhoto,
+  highScore,
+  setHighScore,
 }) => {
   const handleClick = (e) => {
     e.preventDefault();
     shuffle();
     if (member.clicked === false) {
       setCurrentScore(currentScore + 1);
+      if (currentScore + 1 > highScore) {
+        setHighScore(currentScore + 1);
+      }
       if (currentScore + 1 === 7) {
         alert("You win");
       }
@@ -41,8 +46,8 @@ const Card = ({
     }
   };
   return (
-    <div onClick={handleClick} className="card">
-      <img width="100%" height="100%" src={memberPhoto} alt=""></img>
+    <div className="card">
+      <img src={memberPhoto} alt="" onClick={handleClick}></img>
       <div className="member-name">{name}</div>
     </div>
   );

@@ -8,7 +8,12 @@ import handongPic from "../img/HandongAMPC.jpg";
 import yooPic from "../img/YooAMPC.jpg";
 import damiPic from "../img/DamiAMPC.jpg";
 import gahPic from "../img/GahAMPC.jpg";
-const GameArea = ({ setCurrentScore, currentScore }) => {
+const GameArea = ({
+  setCurrentScore,
+  currentScore,
+  highScore,
+  setHighScore,
+}) => {
   const shuffMethod = () => {
     let shuffArr = dcArr;
     for (let i = shuffArr.length - 1; i > 0; i--) {
@@ -71,22 +76,26 @@ const GameArea = ({ setCurrentScore, currentScore }) => {
   ];
   const [dcArr, setdcArr] = useState(origArray);
   return (
-    <div className="game-area">
-      {dcArr.map((member, i) => (
-        <Card
-          dcArr={dcArr}
-          member={member}
-          setdcArr={setdcArr}
-          name={member.name}
-          memberId={member.id}
-          memberPhoto={member.pic}
-          currentScore={currentScore}
-          setCurrentScore={setCurrentScore}
-          originalArray={origArray}
-          shuffle={shuffMethod}
-          key={i}
-        />
-      ))}
+    <div className="game-container">
+      <div className="game-area">
+        {dcArr.map((member, i) => (
+          <Card
+            dcArr={dcArr}
+            member={member}
+            setdcArr={setdcArr}
+            name={member.name}
+            memberId={member.id}
+            memberPhoto={member.pic}
+            currentScore={currentScore}
+            setCurrentScore={setCurrentScore}
+            highScore={highScore}
+            setHighScore={setHighScore}
+            originalArray={origArray}
+            shuffle={shuffMethod}
+            key={i}
+          />
+        ))}
+      </div>
     </div>
   );
 };

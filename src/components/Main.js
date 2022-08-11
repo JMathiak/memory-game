@@ -2,13 +2,20 @@ import React, { Component, useState } from "react";
 import GameArea from "./GameArea";
 import Header from "./Header";
 import Footer from "./Footer";
+import "../styles/main.css";
 const Main = () => {
   const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
 
   return (
-    <div>
-      <Header currentScore={currentScore} />
-      <GameArea setCurrentScore={setCurrentScore} currentScore={currentScore} />
+    <div className="container">
+      <Header currentScore={currentScore} highScore={highScore} />
+      <GameArea
+        setCurrentScore={setCurrentScore}
+        currentScore={currentScore}
+        highScore={highScore}
+        setHighScore={setHighScore}
+      />
       <Footer />
     </div>
   );
