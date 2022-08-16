@@ -2,14 +2,21 @@ import React, { Component, useState } from "react";
 import GameArea from "./GameArea";
 import Header from "./Header";
 import Footer from "./Footer";
+import Modal from "./Modal";
 import "../styles/main.css";
 const Main = () => {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
-
+  const [showHelp, setShowHelp] = useState(true);
+  const text =
+    "The goal of the game is to click all 7 cards without clicking the same card twice. Everytime you successfully click all 7, you can click all 7 cards again to continue raising your score past 7 points.";
   return (
     <div className="container">
       <Header currentScore={currentScore} highScore={highScore} />
+      {showHelp === true && (
+        <Modal setShowHelp={setShowHelp} showHelp={showHelp} text={text} />
+      )}
+
       <GameArea
         setCurrentScore={setCurrentScore}
         currentScore={currentScore}
