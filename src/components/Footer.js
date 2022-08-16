@@ -3,7 +3,7 @@ import "../styles/footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      All photos belong to their owners, I own nothing, only the code
+      All photos belong to their owners, I own no images used in this project.
     </div>
   );
 };

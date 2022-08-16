@@ -4,9 +4,19 @@ import "../styles/header.css";
 const Header = ({ currentScore, highScore }) => {
   return (
     <div className="header">
-      <div className="title">Dreamcatcher Memory Game</div>
-      <div className="current-score">Current Score: {currentScore}</div>
-      <div className="high-score">High Score: {highScore}</div>
+      <div className="title-holder">
+        <div className="title">
+          <span className="font-link">DREAMCATCHER MEMORY GAME</span>
+        </div>
+      </div>
+      <div className="score-holder">
+        <div className="current-score">
+          <span className="font-link">Current Score: {currentScore}</span>
+        </div>
+        <div className="high-score">
+          <span className="font-link">High Score: {highScore}</span>
+        </div>
+      </div>
     </div>
   );
 };

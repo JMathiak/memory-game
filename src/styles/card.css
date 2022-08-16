@@ -20,6 +20,10 @@
     height: 341px;
 }
 
+.font-link{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
 /* .card:nth-of-type(1){
     grid-row-start: 1;
     grid-row-end: 2;
