@@ -8,13 +8,34 @@ const Main = () => {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [showHelp, setShowHelp] = useState(true);
-  const text =
+  const [showCredit, setShowCredit] = useState(false);
+  const instructionText =
     "The goal of the game is to click all 7 cards without clicking the same card twice. Everytime you successfully click all 7, you can click all 7 cards again to continue raising your score past 7 points.";
+  const link = (
+    <a href="https://www.reddit.com/r/dreamcatcher/comments/wdtpyn/dreamcatcher_am_photocard_scans_220801/">
+      here
+    </a>
+  );
+  const creditText =
+    "All photos belong to their owners. Photos are taken from u/SpideyCyclist on Reddit, post can be found ";
   return (
     <div className="container">
       <Header currentScore={currentScore} highScore={highScore} />
       {showHelp === true && (
-        <Modal setShowHelp={setShowHelp} showHelp={showHelp} text={text} />
+        <Modal
+          setShowHelp={setShowHelp}
+          showHelp={showHelp}
+          text={instructionText}
+        />
+      )}
+
+      {showCredit === true && (
+        <Modal
+          setShowHelp={setShowCredit}
+          showHelp={showCredit}
+          text={creditText}
+          link={link}
+        />
       )}
 
       <GameArea
@@ -23,7 +44,7 @@ const Main = () => {
         highScore={highScore}
         setHighScore={setHighScore}
       />
-      <Footer />
+      <Footer setShowCredit={setShowCredit} setShowHelp={setShowHelp} />
     </div>
   );
 };

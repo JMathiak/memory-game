@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import "../styles/modal.css";
-const Modal = ({ setShowHelp, showHelp, text }) => {
+const Modal = ({ setShowHelp, showHelp, text, link }) => {
   return (
     <div className="modal">
       <div className="modal-content">
-        <div>{text}</div>
+        <div>
+          {text} {link}
+        </div>
         <button onClick={() => setShowHelp(!showHelp)}>Close</button>
       </div>
     </div>
