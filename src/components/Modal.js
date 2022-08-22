@@ -4,7 +4,7 @@ const Modal = ({ setShowHelp, showHelp, text, link }) => {
   return (
     <div className="modal">
       <div className="modal-content">
-        <div>
+        <div className="modal-text">
           {text} {link}
         </div>
         <button onClick={() => setShowHelp(!showHelp)}>Close</button>
