@@ -3,7 +3,7 @@ import "../styles/header.css";
 
 const Header = ({ currentScore, highScore }) => {
   return (
-    <div className="header">
+    <header className="header">
       <div className="title-holder">
         <div className="title">
           <span className="font-link">DREAMCATCHER MEMORY GAME</span>
@@ -17,7 +17,7 @@ const Header = ({ currentScore, highScore }) => {
           <span className="font-link">High Score: {highScore}</span>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

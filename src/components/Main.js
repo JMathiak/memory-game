@@ -19,7 +19,7 @@ const Main = () => {
   const creditText =
     "All photos belong to their owners. Photos are taken from u/SpideyCyclist on Reddit, post can be found ";
   return (
-    <div className="container">
+    <main className="container">
       <Header currentScore={currentScore} highScore={highScore} />
       {showHelp === true && (
         <Modal
@@ -45,7 +45,7 @@ const Main = () => {
         setHighScore={setHighScore}
       />
       <Footer setShowCredit={setShowCredit} setShowHelp={setShowHelp} />
-    </div>
+    </main>
   );
 };
 
